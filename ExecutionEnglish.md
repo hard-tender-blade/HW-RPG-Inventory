@@ -12,7 +12,19 @@ possible to verify the operation of the assignment.
 In the written part, analyze the principles and possibilities of inheritance, implementation of interfaces, method override and genericity.
 
 ## ⚪️ Execution of the practical part
+### Inventory features
+- Rewinds days which spoils things in the inventory
+- Counts inventory weight
+- Adding new items using drag and drop from an infinite source
 
+What the game looks like
+
+<img src="https://cdn.discordapp.com/attachments/967125309184950343/1083391940395008130/image.png" width="500px">
+
+
+The class inheritance scheme that the inventory uses
+
+<img src="https://cdn.discordapp.com/attachments/967125309184950343/1083388418916106360/image.png" width="500px">
 
 ## ⚪️ Execution of the written part
 ### Class inheritance

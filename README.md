@@ -1,5 +1,5 @@
 # Homework - RPG game inventiry &amp; inheritance in c#
- - Completion of the task in Czech language
+ - Completion of the task in <a href="https://github.com/DenisMatsenko/HW-RPG-Inventory/blob/main/ExecutionCzech.md">Czech language</a>
 
 ## ⚪️ Task
 ### Practical part

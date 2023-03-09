@@ -1,5 +1,6 @@
 # Homework - RPG game inventiry &amp; inheritance in c#
- - Completion of the task in <a href="https://github.com/DenisMatsenko/HW-RPG-Inventory/blob/main/ExecutionCzech.md">Czech language</a>
+ - Completion of the task in <a target="_blank" href="https://github.com/DenisMatsenko/HW-RPG-Inventory/blob/main/ExecutionCzech.md">Czech language</a>
+ - Link to <a target="_blank" href="https://github.com/DenisMatsenko/HW-RPG-Inventory/tree/main/Inventory/Assets/Scripts/MyClasses">C# scripts</a>
 
 ## ⚪️ Task
 ### Practical part

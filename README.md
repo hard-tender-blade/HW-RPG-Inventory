@@ -28,7 +28,7 @@ What the game looks like
 
 The class inheritance scheme that the inventory uses
 
-<img src="https://cdn.discordapp.com/attachments/967125309184950343/1083388418916106360/image.png" width="500px">
+<img src="https://cdn.discordapp.com/attachments/967125309184950343/1085264648732954756/image.png" width="500px">
 
 ## ⚪️ Execution of the written part
 ### Class inheritance

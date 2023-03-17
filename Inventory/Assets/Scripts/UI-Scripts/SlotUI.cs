@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour, IDropHandler
+public class SlotUI : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
         if(transform.childCount == 0) {
             GameObject dropped = eventData.pointerDrag;
-            DraggableItem draggableItem = dropped.GetComponent<DraggableItem>();
+            ItemUI draggableItem = dropped.GetComponent<ItemUI>();
             draggableItem.parentAfterDrug = transform;
         }
     }

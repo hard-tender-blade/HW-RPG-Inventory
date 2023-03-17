@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class SpawnerUI : MonoBehaviour
 {
     public GameObject itemToSpawn;
     // Start is called before the first frame update

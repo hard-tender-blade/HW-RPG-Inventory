@@ -4,17 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Image image;
     private GameObject oldParent;
     [HideInInspector] public Item item;
     [HideInInspector] public Transform parentAfterDrug;
 
+    [System.Obsolete]
     void Start() {
         GameObject parent = gameObject.transform.parent.gameObject;
         if(parent.tag == "Spawner")  {
-            switch (parent.GetComponent<Spawner>().itemToSpawn.tag)
+            switch (parent.GetComponent<SpawnerUI>().itemToSpawn.tag)
             {
                 case "Food":
                     item = new Food{name = "Meat", weight = 10, amount = 3};
@@ -27,28 +28,13 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                     break;
             }
         }
-
         SetDescription();
     }
 
-    [System.Obsolete]
-    public void OneDayHasPassed() {
-        GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>().CalcWeight();
-        if(item is Food) {
-            Food food = item as Food;
-            food.amount--;
-            if(food.amount == 0)
-                Destroy(gameObject);
-        }
-
-        if(item is Weapon) {
-            Weapon food = item as Weapon;
-            food.quality--;
-            if(food.quality == 0)
-                Destroy(gameObject);
-        }
-
+    void Update() {
         SetDescription();
+        if(item.IsDestroyed())
+            Destroy(gameObject);
     }
 
     public void SetDescription() {
@@ -77,11 +63,13 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.raycastTarget = true;
 
         //spawn next item if it is spawner
-        Debug.Log(oldParent.name);
         if(oldParent.tag == "Spawner" && parentAfterDrug.tag == "Slot") {
-            Debug.Log(oldParent.name);
-            oldParent.GetComponent<Spawner>().SpawnItem();
-            GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>().CalcWeight();
-        }   
+            oldParent.GetComponent<SpawnerUI>().SpawnItem();
+            // Debug.Log(int.Parse(parentAfterDrug.name.Split(' ')[1]));
+            Inventory.AddItem(item);
+            //GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>().CalcWeight();
+        }
+
+        Debug.Log(oldParent.name + "->" + parentAfterDrug.name);
     }
 }

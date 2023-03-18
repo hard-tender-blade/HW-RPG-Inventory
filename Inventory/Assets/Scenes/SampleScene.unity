@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 102112535}
   - component: {fileID: 102112536}
   m_Layer: 5
-  m_Name: InventorySection
+  m_Name: InventorySlots
   m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 102112531}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a0b7cd5247a84d1eab423a2ac95e4e4, type: 3}
+  m_Script: {fileID: 11500000, guid: df72c5caa71b74f8b825126920c967a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sumweight: {fileID: 827779974}
@@ -262,7 +262,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224453339204528924, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Name
-      value: InventorySlot (3)
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3118762267666688774, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Pivot.x
@@ -359,7 +359,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224453339204528924, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Name
-      value: InventorySlot (8)
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3118762267666688774, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Pivot.x
@@ -456,7 +456,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224453339204528924, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Name
-      value: InventorySlot (9)
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3118762267666688774, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Pivot.x
@@ -553,7 +553,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224453339204528924, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Name
-      value: InventorySlot (5)
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3118762267666688774, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Pivot.x
@@ -655,7 +655,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224453339204528924, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Name
-      value: InventorySlot
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3118762267666688774, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Pivot.x
@@ -752,7 +752,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224453339204528924, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Name
-      value: InventorySlot (1)
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3118762267666688774, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Pivot.x
@@ -1169,8 +1169,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 102112536}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GoToNextDay
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: OneDayHasPassed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1179,7 +1179,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &618216054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,7 +1227,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224453339204528924, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Name
-      value: InventorySlot (7)
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3118762267666688774, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Pivot.x
@@ -1474,7 +1474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224453339204528924, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Name
-      value: InventorySlot (2)
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3118762267666688774, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Pivot.x
@@ -1571,7 +1571,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224453339204528924, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Name
-      value: InventorySlot (6)
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3118762267666688774, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Pivot.x
@@ -2146,7 +2146,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224453339204528924, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Name
-      value: InventorySlot (4)
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3118762267666688774, guid: 3fea2f8ac288f41bc9058b5b91d645eb, type: 3}
       propertyPath: m_Pivot.x

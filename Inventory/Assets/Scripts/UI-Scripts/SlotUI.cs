@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
 public class SlotUI : MonoBehaviour, IDropHandler
 {
+    // ? OnDrop is called when the user releases the mouse button while
+    // ? the mouse is over the GUIElement or Collider.
     public void OnDrop(PointerEventData eventData)
     {
         if(transform.childCount == 0) {

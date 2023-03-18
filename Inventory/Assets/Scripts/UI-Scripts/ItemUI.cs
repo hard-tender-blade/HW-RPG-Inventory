@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Image image;
-    private GameObject oldParent;
+    // * This class inherits one class and implements three interfaces
+    [SerializeField] private Image image;
     [HideInInspector] public Item item;
     [HideInInspector] public Transform parentAfterDrug;
+    private GameObject oldParent;
+    private TMPro.TextMeshProUGUI itemDescription;
 
     [System.Obsolete]
     void Start() {
@@ -18,30 +18,32 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
             switch (parent.GetComponent<SpawnerUI>().itemToSpawn.tag)
             {
                 case "Food":
-                    item = new Food{name = "Meat", weight = 10, amount = 3};
+                    item = new Food("Meat", 10, 3);
                     break;
                 case "Weapon":
-                    item = new Weapon{name = "Axe", weight = 25, quality = 5};
+                    item = new Weapon("Sword", 25, 5);
                     break;
                 case "Other":
-                    item = new Item{name = "Shoes", weight = 10};
+                    item = new Item("Shoes", 5);
                     break;
             }
         }
+
+        // ? Get the TextMeshProUGUI component from the child of the game object
+        itemDescription = gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>();
         SetDescription();
     }
 
-    void Update() {
+    // ? Update is called once per frame
+    private void Update() {
         SetDescription();
         if(item.IsDestroyed())
             Destroy(gameObject);
     }
 
-    public void SetDescription() {
-        gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>()
-        .text = item.GetDescription();
-    }
+    public void SetDescription() => itemDescription.text = item.GetDescription();
 
+    // ? Unity Event System methods (not important)
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
         oldParent = gameObject.transform.parent.gameObject;
@@ -50,26 +52,20 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         transform.SetAsLastSibling();
         image.raycastTarget = false;
     }
-
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
         transform.position = Input.mousePosition;
     }
-
     [System.Obsolete]
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         transform.SetParent(parentAfterDrug);
         image.raycastTarget = true;
 
-        //spawn next item if it is spawner
+        // ? If the item is dropped in the inventoryUI, add it to the inventory & spawn a new item
         if(oldParent.tag == "Spawner" && parentAfterDrug.tag == "Slot") {
             oldParent.GetComponent<SpawnerUI>().SpawnItem();
-            // Debug.Log(int.Parse(parentAfterDrug.name.Split(' ')[1]));
             Inventory.AddItem(item);
-            //GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>().CalcWeight();
         }
-
-        Debug.Log(oldParent.name + "->" + parentAfterDrug.name);
     }
 }

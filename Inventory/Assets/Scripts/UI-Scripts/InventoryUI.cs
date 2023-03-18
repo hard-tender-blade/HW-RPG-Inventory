@@ -1,20 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class InventoryUI : MonoBehaviour
 {
     [SerializeField] private TMPro.TextMeshProUGUI sumweight;
 
-    void Update() {
-        UpdateWeight();
-    }
+    // ? Update is called once per frame
+    private void Update() => UpdateWeight();
+    private void UpdateWeight() => sumweight.text = $"Total weight: {Inventory.GetInventoryWeight().ToString()} kg";
 
-    private void UpdateWeight() {
-        sumweight.text = $"Total weight: {Inventory.GetWeight().ToString()} kg";
-    }
-
-    public void OneDayHasPassed() {
-        Inventory.OneDayHasPassed();
-    }
+    // ? This method is called from the button
+    public void OneDayHasPassed() => Inventory.OneDayHasPassed();
 }

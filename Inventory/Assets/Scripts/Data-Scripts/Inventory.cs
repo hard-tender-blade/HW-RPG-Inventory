@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class Inventory // ? This class is a singleton
+public class Inventory
 {
     private static List<Item> items = new List<Item>();
     private static int weight = 0;
